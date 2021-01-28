@@ -42,10 +42,15 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == newTransactionActivityRequestCode && resultCode == Activity.RESULT_OK) {
             data?.getStringExtra(NeuerEintragActivity.EXTRA_REPLY)?.let {
-                var betrag = intent.getIntExtra(NeuerEintragActivity.betrag, 0)
-                var tag = intent.getIntExtra(NeuerEintragActivity.tag, 0)
-                var kat = intent.getStringExtra(NeuerEintragActivity.kat).toString()
-                var art = intent.getStringExtra(NeuerEintragActivity.art).toString()
+                //val bundle: Bundle? = intent.extras
+                //val betrag2 = Integer.parseInt(bundle?.get(NeuerEintragActivity.betrag) as String)
+                //val tag2 = Integer.parseInt(bundle?.get(NeuerEintragActivity.tag).toString())
+                //val kat2 = bundle?.get(NeuerEintragActivity.kat)
+                //val art2 = bundle?.get(NeuerEintragActivity.art)
+                var betrag = data.getIntExtra(NeuerEintragActivity.betrag, 100)
+                var tag = data.getIntExtra(NeuerEintragActivity.tag, 100)
+                var kat = data.getStringExtra(NeuerEintragActivity.kat).toString()
+                var art = data.getStringExtra(NeuerEintragActivity.art).toString()
                 var transaction = Transaction(0, art, kat, tag, betrag)
                 transactionViewModel.insert(transaction)
             }
