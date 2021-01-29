@@ -13,32 +13,49 @@
         android:inputType="textAutoComplete"
         android:layout_margin="@dimen/big_padding"
         android:textSize="18sp" />
+    <Button
+        android:id="@+id/button_einnahme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_margin="@dimen/big_padding"
+        android:text="@string/buttonEinnahmen"
+        android:textColor="@color/buttonLabel" />
+    <Button
+        android:id="@+id/button_ausgabe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="@dimen/big_padding"
+        android:text="@string/buttonAusgaben"
+        android:textColor="@color/buttonLabel" />
+
+    <Spinner
+        android:id="@+id/kategorien_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="37dp" />
+
+    <EditText
+        android:id="@+id/textView4"
+        android:fontFamily="sans-serif-light"
+        android:hint="Datum"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:textSize="18sp" />/>
+
+    <Button
+        android:id="@+id/pickDateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="@string/hint_date" />
     <Button
         android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="@string/button_save"
         android:layout_margin="@dimen/big_padding"
+        android:text="@string/button_save"
         android:textColor="@color/buttonLabel" />
-
-    <EditText
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:text="TextView" />
-
-    <EditText
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="41dp"
-        android:text="TextView" />
 
 </LinearLayout>
