@@ -6,6 +6,7 @@
     <string name="add">Add</string>
     <string name="hint_betrag">Betrag in Euros</string>
     <string name="hint_date">Datum</string>
+    <string name="stats">Statistiken</string>
 
     <string-array name="kategorienAusgaben">
         <item>Essen</item>
