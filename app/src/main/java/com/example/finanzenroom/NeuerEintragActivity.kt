@@ -91,10 +91,12 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
                 val transArt = getArtDerAusgabe()
                 val transKat = spinner.selectedItem.toString()
                 //val transKat = tV3.text.toString()
-                val taggo = day.toString()+month.toString()+year.toString()
-                val transTag = taggo
+                //val taggo = day.toString()+month.toString()+year.toString()
+                //val transTag = taggo
                 replyIntent.putExtra(betrag, transBetrag)
-                replyIntent.putExtra(tag, transTag)
+                replyIntent.putExtra(jahr, year)
+                replyIntent.putExtra(monat, month)
+                replyIntent.putExtra(tag, day)
                 replyIntent.putExtra(kat, transKat)
                 replyIntent.putExtra(art, transArt)
                 replyIntent.putExtra(EXTRA_REPLY, "hallo")
@@ -121,9 +123,11 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     companion object {
         const val EXTRA_REPLY = "com.example.android.wordlistsql.REPLY"
         const val betrag = "betrag"
-        const val tag = "tag"
         const val kat = "kategorie"
         const val art = "art"
+        const val jahr = "jahr"
+        const val monat = "monat"
+        const val tag = "tag"
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

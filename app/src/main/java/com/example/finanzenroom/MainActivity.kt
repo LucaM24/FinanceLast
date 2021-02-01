@@ -48,10 +48,13 @@ class MainActivity : AppCompatActivity() {
                 //val kat2 = bundle?.get(NeuerEintragActivity.kat)
                 //val art2 = bundle?.get(NeuerEintragActivity.art)
                 var betrag = Integer.parseInt(data.getStringExtra(NeuerEintragActivity.betrag))
-                var tag = Integer.parseInt(data.getStringExtra(NeuerEintragActivity.tag))
+                //var tag = Integer.parseInt(data.getStringExtra(NeuerEintragActivity.tag))
+                var tag = data.getIntExtra(NeuerEintragActivity.tag, 0)
+                var monat = data.getIntExtra(NeuerEintragActivity.monat, 0)
+                var jahr = data.getIntExtra(NeuerEintragActivity.jahr, 0)
                 var kat = data.getStringExtra(NeuerEintragActivity.kat).toString()
                 var art = data.getStringExtra(NeuerEintragActivity.art).toString()
-                var transaction = Transaction(0, art, kat, tag, betrag)
+                var transaction = Transaction(0, art, kat, jahr, monat, tag, betrag)
                 transactionViewModel.insert(transaction)
             }
         } else {
