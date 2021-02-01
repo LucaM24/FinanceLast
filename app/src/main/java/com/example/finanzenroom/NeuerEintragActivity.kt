@@ -10,6 +10,7 @@ import android.text.TextUtils
 import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
+import java.time.DayOfWeek
 import java.util.*
 
 class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -29,10 +30,7 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         bEinnahme = findViewById(R.id.button_einnahme)
         bAusgabe = findViewById(R.id.button_ausgabe)
         spinner = findViewById(R.id.kategorien_spinner)
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
+
 
         bEinnahme.setOnClickListener{
             bAusgabe.isEnabled = bAusgabe.isEnabled != true
@@ -60,17 +58,28 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
             }
         }
         //Datepicker um Datumvvariable einzulesen
-        pickDateBtn = findViewById(R.id.pickDateBtn)
-        pickDateBtn.setOnClickListener{
-            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                // Display Selected date in TextView
-                tV4.setText(dayOfMonth + month + year)
-            }, year, month, day)
-            dpd.show()
-
+        var c = Calendar.getInstance()
+        var year = c.get(Calendar.YEAR)
+        var month = c.get(Calendar.MONTH) + 1
+        var day = c.get(Calendar.DAY_OF_MONTH)
+        tV4.setText((day.toString()+ "." + month.toString() + "." + year.toString()))
+        fun date() { //3. Methode, falls der Nutzer einen anderen Tag auswählen möchte
+            val datePickerDialog =
+                    DatePickerDialog(this@NeuerEintragActivity, DatePickerDialog.OnDateSetListener
+                    { view, yearOfYear, monthOfYear, dayOfMonth ->
+                        tV4.setText((dayOfMonth.toString()+ "." + (monthOfYear + 1).toString() + "." + yearOfYear.toString())) //3.1 Datum im Button wird mit dem ausgewählten ersetzt
+                        day = dayOfMonth //3.2 Die Variablen Tag, Monat und Jahr, welche vorher das Livedatum waren, werden auf die vom Nutzer ausgewählten Daten gesetzt
+                        month = monthOfYear + 1
+                        year = yearOfYear
+                        //scrollview.text = ""+day+"."+month+"."+year //Nur zum Test (kann gelöscht werden)
+                    }, year, month, day
+                    )
+            datePickerDialog.show()
         }
-
-
+        pickDateBtn = findViewById(R.id.pickDateBtn)
+        pickDateBtn.setOnClickListener(){
+            date()
+        }
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
@@ -82,7 +91,8 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
                 val transArt = getArtDerAusgabe()
                 val transKat = spinner.selectedItem.toString()
                 //val transKat = tV3.text.toString()
-                val transTag = tV4.text.toString()
+                val taggo = day.toString()+month.toString()+year.toString()
+                val transTag = taggo
                 replyIntent.putExtra(betrag, transBetrag)
                 replyIntent.putExtra(tag, transTag)
                 replyIntent.putExtra(kat, transKat)
