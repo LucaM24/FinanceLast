@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, NeuerEintragActivity::class.java)
             startActivityForResult(intent, newTransactionActivityRequestCode)
         }
+        val fab2 = findViewById<FloatingActionButton>(R.id.fab2)
+        fab2.setOnClickListener{
+            val intent = Intent(this@MainActivity, Stats::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

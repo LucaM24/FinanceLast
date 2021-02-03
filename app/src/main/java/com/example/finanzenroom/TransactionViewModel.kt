@@ -19,6 +19,10 @@ class TransactionViewModel(private val repository: TransactionRepository) : View
     fun insert(transaction: Transaction) = viewModelScope.launch {
         repository.insert(transaction)
     }
+
+    fun getMonthSum(monat: Int, jahr: Int, art: String) = viewModelScope.launch {
+        repository.getMonthSum(monat, jahr, art)
+    }
 }
 
 class WordViewModelFactory(private val repository: TransactionRepository) : ViewModelProvider.Factory {

@@ -61,6 +61,7 @@ public abstract class TransactionRoomDatabase : RoomDatabase() {
                     TransactionRoomDatabase::class.java,
                     "transaction_database"
                 )
+                    .allowMainThreadQueries()
                         .fallbackToDestructiveMigration()
                     .addCallback((TransactionDatabaseCallback(scope)))
                     .build()

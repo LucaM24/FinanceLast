@@ -19,4 +19,10 @@ class TransactionRepository(private val transactionDao: TransactionDao) {
     suspend fun insert(transaction: Transaction) {
         transactionDao.insert(transaction)
     }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getMonthSum(monat: Int, jahr: Int, art: String) {
+        transactionDao.getMonthSum(monat, jahr, art)
+    }
 }

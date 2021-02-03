@@ -17,4 +17,8 @@ interface TransactionDao{
 
         @Query("DELETE FROM transactions_table")
         suspend fun deleteAll()
+
+        @Query("SELECT SUM(_bet) FROM transactions_table WHERE _mon = (:monat) AND _jahr = (:jahr) AND _art = (:art)")
+        suspend fun getMonthSum(monat: Int, jahr: Int, art: String): Int
+
 }
