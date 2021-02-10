@@ -10,7 +10,7 @@
     <string name="hint_Ausgabe">Ausgaben</string>
     <string name="hint_Einnahme">Einnahmen</string>
     <string name="hint_Saldo">Saldo</string>
-
+    <!-- Wenn Kategorien hinzugefüht wegen, dann bitte auch unten in das zusammengefügte Array hinzufügen -->
     <string-array name="kategorienAusgaben">
         <item>Essen</item>
         <item>Fixkosten</item>
@@ -21,7 +21,8 @@
         <item>Sonstige</item>
     </string-array>
     <string-array name="kategorienEinahmen">
-        <item>Gehalt</item>
+        <item>Hauptjob</item>
+        <item>Nebenjob</item>
         <item>Schenkung</item>
         <item>Leihe</item>
         <item>Pfand</item>
@@ -40,6 +41,20 @@
         <item>Oktober</item>
         <item>November</item>
         <item>Dezember</item>
+    </string-array>
+    <string-array name="alleKats">
+        <item>Essen</item>
+        <item>Fixkosten</item>
+        <item>Nahrungseinkauf</item>
+        <item>Kauf von Gegenständen</item>
+        <item>Konsumgüter</item>
+        <item>Unterhaltung / Kultur</item>
+        <item>Sonstige</item>
+        <item>Gehalt</item>
+        <item>Schenkung</item>
+        <item>Leihe</item>
+        <item>Pfand</item>
+        <item>Erträge aus Verkäufen</item>
     </string-array>
     <string name="buttonAusgaben">Ausgaben</string>
     <string name="buttonEinnahmen">Einnahmen</string>

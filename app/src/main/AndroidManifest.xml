@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="Instantiatable">
-        <activity android:name=".Stats"></activity>
+        <activity android:name=".changeEntry"></activity>
+        <activity android:name=".Stats" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">

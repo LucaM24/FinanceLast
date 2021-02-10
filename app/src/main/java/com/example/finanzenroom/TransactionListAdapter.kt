@@ -17,14 +17,10 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
         val current = getItem(position)
-        //Log.e("Laenge", current._dat.toString().length.toString())
+        var stringID = current._id.toString()
 
+        holder.bind( current._tag.toString() + "." + current._mon.toString() + "." +  current._jahr + ": "+ current._art + " " + current._kat + " " + "ID: " + current._id + "   " + current._bet + " €") // Edit hier um Anzeige zu ändern
 
-        //val tag = current._dat.toString().substring(0,3).toString()
-        //val monat = current._dat.toString().substring(3,6).toString()
-        //val jahr = current._dat.toString().substring(6,7).toString()
-        //val datumzsm = "$tag.$monat.$jahr"
-        holder.bind( current._tag.toString() + "." + current._mon.toString() + "." +  current._jahr + ": "+ current._art + " " + current._kat + " " + current._bet + " €") // Edit hier um Anzeige zu ändern
     }
 
     class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

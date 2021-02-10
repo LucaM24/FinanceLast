@@ -1,6 +1,8 @@
 package com.example.finanzenroom
 
 import androidx.lifecycle.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 // Declares the DAO as a private property in the constructor. Pass in the DAO
@@ -13,6 +15,7 @@ class TransactionViewModel(private val repository: TransactionRepository) : View
     // - Repository is completely separated from the UI through the ViewModel.
     val allWords: LiveData<List<Transaction>> = repository.allWords.asLiveData()
 
+
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
@@ -20,8 +23,12 @@ class TransactionViewModel(private val repository: TransactionRepository) : View
         repository.insert(transaction)
     }
 
-    fun getMonthSum(monat: Int, jahr: Int, art: String) = viewModelScope.launch {
-        repository.getMonthSum(monat, jahr, art)
+    fun allWordsAsNonLiveData() : List<Transaction> {
+        return repository.allWordsNonFD
+    }
+
+    fun deleteOne(id: Int){
+        repository.deleteOne(id)
     }
 }
 
