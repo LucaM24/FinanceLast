@@ -19,7 +19,7 @@ interface TransactionDao{
         fun getAllNonLD(): List<Transaction>
 
         @Query("DELETE FROM transactions_table")
-        suspend fun deleteAll()
+        fun deleteAll()
 
         @Query("DELETE FROM transactions_table WHERE _id = (:id)")
         fun deleteOne(id: Int)

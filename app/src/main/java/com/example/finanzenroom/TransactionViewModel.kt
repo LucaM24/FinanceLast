@@ -23,6 +23,10 @@ class TransactionViewModel(private val repository: TransactionRepository) : View
         repository.insert(transaction)
     }
 
+    fun deleteAll(){
+        repository.deleteAll()
+    }
+
     fun allWordsAsNonLiveData() : List<Transaction> {
         return repository.allWordsNonFD
     }

@@ -40,4 +40,8 @@ class TransactionRepository(private val transactionDao: TransactionDao) {
     fun deleteOne(id: Int){
         transactionDao.deleteOne(id)
     }
+
+    fun deleteAll(){
+        transactionDao.deleteAll()
+    }
 }
