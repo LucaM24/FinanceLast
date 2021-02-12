@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Stats">
-
+<!-- (TextViews Kontur) und dann am end schrift farbig, buttons türkis hintergrund grau, finanzenroom banner tükis-->
 <!--    <Button
         android:id="@+id/button_einnahme2"
         android:layout_width="162dp"
