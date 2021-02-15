@@ -19,7 +19,7 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
         val current = getItem(position)
         var stringID = current._id.toString()
 
-        holder.bind("" + current._bet + " €           " + current._art + "          " + current._kat + "\n" + current._tag.toString() + "." + current._mon.toString() + "." + current._jahr + "                   " + "ID: " + current._id) // Edit hier um Anzeige zu ändern
+        holder.bind("" +current._bet+ " €         " +current._kat+"\n" + current._tag.toString() + "." + current._mon.toString() + "." + current._jahr + "                            " + "ID: " + current._id) // Edit hier um Anzeige zu ändern
     }
 
     class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
