@@ -29,11 +29,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        item.setOnMenuItemClickListener {
-            val intent = Intent(this@MainActivity, Settings::class.java)
-            startActivity(intent)
-            return@setOnMenuItemClickListener true
-        }
+
+        val intent = Intent(this@MainActivity, Settings::class.java)
+        startActivity(intent)
         return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {

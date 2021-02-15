@@ -58,8 +58,8 @@
 
     <TextView
         android:id="@+id/datumtextview"
-        android:layout_width="160dp"
-        android:layout_height="31dp"
+        android:layout_width="159dp"
+        android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="30sp"
