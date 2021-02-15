@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         var year = c.get(Calendar.YEAR)
         var month = c.get(Calendar.MONTH) + 1
         var day = c.get(Calendar.DAY_OF_MONTH)
-        datumTextView.text = ""+day+"."+"."+month+"."+year
+        datumTextView.text = ""+day+""+"."+month+"."+year
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
