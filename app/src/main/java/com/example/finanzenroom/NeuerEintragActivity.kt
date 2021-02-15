@@ -33,7 +33,9 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
 
 
         bEinnahme.setOnClickListener{
-            bAusgabe.isEnabled = bAusgabe.isEnabled != true
+            bAusgabe.isEnabled = true
+            bEinnahme.isEnabled = false
+            bEinnahme.isClickable = true
             spinner.onItemSelectedListener = this
             ArrayAdapter.createFromResource(
                     this,
@@ -46,7 +48,9 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         }
 
         bAusgabe.setOnClickListener{
-            bEinnahme.isEnabled = bEinnahme.isEnabled != true
+            bEinnahme.isEnabled = true
+            bAusgabe.isEnabled = false
+            bAusgabe.isClickable = true
             spinner.onItemSelectedListener = this
             ArrayAdapter.createFromResource(
                     this,
