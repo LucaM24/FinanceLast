@@ -1,5 +1,6 @@
 package com.example.finanzenroom
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -26,6 +27,8 @@ class changeEntry : AppCompatActivity() {
         deleteID.setOnClickListener{
             if(tV7.text.isNotEmpty()){
                 transactionViewModel.deleteOne(Integer.parseInt(tV7.text.toString()))
+                val intent = Intent(this@changeEntry, MainActivity::class.java) //Zurück zum HomeScreen
+                startActivity(intent)
             } else {
                 Toast.makeText(
                         applicationContext,
@@ -37,6 +40,8 @@ class changeEntry : AppCompatActivity() {
         deleteAll.setOnClickListener{
             if(checkBox.isChecked){
                 transactionViewModel.deleteAll()
+                val intent = Intent(this@changeEntry, MainActivity::class.java) //Zurück zum HomeScreen
+                startActivity(intent)
             }   else {
                 Toast.makeText(
                         applicationContext,

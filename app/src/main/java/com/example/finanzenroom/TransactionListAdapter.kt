@@ -8,10 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-
 class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.TransactionViewHolder>(WordsComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder {
+
         return TransactionViewHolder.create(parent)
     }
 
@@ -19,21 +19,24 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
         val current = getItem(position)
         var stringID = current._id.toString()
 
-        holder.bind( current._tag.toString() + "." + current._mon.toString() + "." +  current._jahr + ": "+ current._art + " " + current._kat + " " + "ID: " + current._id + "   " + current._bet + " €") // Edit hier um Anzeige zu ändern
-
+        holder.bind("" + current._bet + " €           " + current._art + "          " + current._kat + "\n" + current._tag.toString() + "." + current._mon.toString() + "." + current._jahr + "                   " + "ID: " + current._id) // Edit hier um Anzeige zu ändern
     }
 
     class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         private val transactionItemView: TextView = itemView.findViewById(R.id.textView)
+
+
 
         fun bind(text: String) {
             transactionItemView.text = text.toString()
+
         }
 
         companion object {
             fun create(parent: ViewGroup): TransactionViewHolder {
                 val view: View = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.recyclerview_item, parent, false)
+                        .inflate(R.layout.recyclerview_item, parent, false)
                 return TransactionViewHolder(view)
             }
         }

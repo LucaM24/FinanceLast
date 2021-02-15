@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NeuerEintragActivity" />
+        <activity android:name=".Settings" />
     </application>
 
 </manifest>

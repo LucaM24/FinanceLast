@@ -1,9 +1,13 @@
 package com.example.finanzenroom
 
 import android.app.Activity
+import android.content.ClipData
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
@@ -15,6 +19,20 @@ class MainActivity : AppCompatActivity() {
     private val newTransactionActivityRequestCode = 1
     private val transactionViewModel: TransactionViewModel by viewModels {
         WordViewModelFactory((application as TransactionApplication).repository)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.nav_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        item.setOnMenuItemClickListener {
+            val intent = Intent(this@MainActivity, Settings::class.java)
+            startActivity(intent)
+            return@setOnMenuItemClickListener true
+        }
+        return true
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, changeEntry::class.java)
             startActivity(intent)
         }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
