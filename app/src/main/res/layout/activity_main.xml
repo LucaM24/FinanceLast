@@ -8,15 +8,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="399dp"
+        android:layout_height="385dp"
         android:padding="@dimen/big_padding"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.334"
         tools:listitem="@layout/recyclerview_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -54,5 +53,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    <TextView
+        android:id="@+id/datumtextview"
+        android:layout_width="141dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.039"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

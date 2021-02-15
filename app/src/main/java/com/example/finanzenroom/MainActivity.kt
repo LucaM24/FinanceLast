@@ -8,12 +8,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val newTransactionActivityRequestCode = 1
@@ -47,6 +49,13 @@ class MainActivity : AppCompatActivity() {
             // Update the cached copy of the words in the adapter.
             transaction?.let { adapter.submitList(it) }
         })
+
+        var datumTextView = findViewById<TextView>(R.id.datumtextview)
+        var c = Calendar.getInstance()
+        var year = c.get(Calendar.YEAR)
+        var month = c.get(Calendar.MONTH) + 1
+        var day = c.get(Calendar.DAY_OF_MONTH)
+        datumTextView.text = ""+day+"."+"."+month+"."+year
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
