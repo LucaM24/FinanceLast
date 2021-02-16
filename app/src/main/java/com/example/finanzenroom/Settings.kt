@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.RatingBar
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class Settings: AppCompatActivity() {
@@ -13,7 +14,7 @@ class Settings: AppCompatActivity() {
         setContentView(R.layout.settings_screen)
 
         var settings = findViewById<TextView>(R.id.textView_settings)
-        settings.text = "Settings"
+        settings.text = "Einstellungen"
 
         var tvDarkMode = findViewById<TextView>(R.id.textView_darkmode)
         tvDarkMode.text = "Dark Mode"
@@ -25,7 +26,11 @@ class Settings: AppCompatActivity() {
 
         var tvRateUs = findViewById<TextView>(R.id.textView_rateus)
         tvRateUs.text = "Rate us!"
-
         var rateUs = findViewById<RatingBar>(R.id.ratingBar)
+        rateUs.setOnClickListener{
+            Toast.makeText(
+                    applicationContext,
+                    "Danke!",
+                    Toast.LENGTH_LONG).show()        }
     }
 }

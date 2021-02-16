@@ -8,12 +8,12 @@
     android:background="@drawable/gradient_background">
 
 
-<Button
+    <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="120dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="139dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="152dp"
         android:text="Löschen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,29 +22,43 @@
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="284dp"
         android:text="Alle Einträge löschen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDeleteAll"
-        android:layout_width="120dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="132dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="284dp"
         android:text="Reset"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.799"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/tV6"
-        android:layout_width="119dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="42dp"
+        android:layout_width="117dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="152dp"
         android:hint="ID eintragen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/changeentryüberschrift"
+        android:layout_width="188dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

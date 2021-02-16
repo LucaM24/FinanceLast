@@ -20,6 +20,7 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     private lateinit var bAusgabe : Button
     private lateinit var spinner : Spinner
     private lateinit var pickDateBtn : Button
+    private lateinit var neuerEintragÜberschrift: TextView
 
     @RequiresApi(Build.VERSION_CODES.N)
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,8 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         bAusgabe = findViewById(R.id.button_ausgabe)
         spinner = findViewById(R.id.kategorien_spinner)
 
+        neuerEintragÜberschrift = findViewById(R.id.neuereintragüberschrift)
+        neuerEintragÜberschrift.text = "Neuer Eintrag"
 
         bEinnahme.setOnClickListener{
             bAusgabe.isEnabled = true

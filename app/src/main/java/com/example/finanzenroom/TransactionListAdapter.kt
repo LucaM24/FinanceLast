@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.util.rangeTo
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +20,7 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
         val current = getItem(position)
         var stringID = current._id.toString()
 
-        holder.bind("" +current._bet+ " €         " +current._kat+"\n" + current._tag.toString() + "." + current._mon.toString() + "." + current._jahr + "                            " + "ID: " + current._id) // Edit hier um Anzeige zu ändern
+        holder.bind(""+current._bet+" €" +"    "+current._kat+"\n " +current._tag.toString()+"."+current._mon.toString()+"."+current._jahr+""+"ID: "+ current._id)
     }
 
     class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,7 +30,7 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
 
 
         fun bind(text: String) {
-            transactionItemView.text = text.toString()
+            transactionItemView.text = text
 
         }
 

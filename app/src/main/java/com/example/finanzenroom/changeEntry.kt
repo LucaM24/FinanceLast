@@ -8,18 +8,24 @@ import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import org.w3c.dom.Text
 
 class changeEntry : AppCompatActivity() {
     private lateinit var tV7 : TextView
     private lateinit var checkBox : CheckBox
     private lateinit var deleteID : Button
     private lateinit var deleteAll : Button
+    private lateinit var changeEntryÜberschrift: TextView
     private val transactionViewModel: TransactionViewModel by viewModels {
         WordViewModelFactory((application as TransactionApplication).repository)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_entry)
+
+        changeEntryÜberschrift = findViewById(R.id.changeentryüberschrift)
+        changeEntryÜberschrift.text = "Eintrag löschen"
+
         deleteID = findViewById<Button>(R.id.buttonDelete)
         deleteAll = findViewById<Button>(R.id.buttonDeleteAll)
         checkBox = findViewById<CheckBox>(R.id.checkBox)

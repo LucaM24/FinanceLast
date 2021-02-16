@@ -30,13 +30,19 @@
 
 
 
+
+
+
+
+
+
     ]]>
 
     <EditText
         android:id="@+id/edit_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="128dp"
         android:fontFamily="sans-serif-light"
         android:hint="@string/hint_word"
 
@@ -44,7 +50,7 @@
         android:minHeight="@dimen/min_height"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,47 +59,47 @@
         android:layout_width="168dp"
         android:layout_height="59dp"
 
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="336dp"
         android:text="@string/buttonEinnahmen"
         android:textColor="@color/buttonLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_ausgabe"
-        android:layout_width="163dp"
-        android:layout_height="59dp"
+        android:layout_width="169dp"
+        android:layout_height="57dp"
 
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="336dp"
         android:text="@string/buttonAusgaben"
         android:textColor="@color/buttonLabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/kategorien_spinner"
-        android:layout_width="202dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="400dp"
+        android:layout_width="349dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="272dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/textView4"
-        android:layout_width="261dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="148dp"
+        android:layout_width="263dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="240dp"
         android:fontFamily="sans-serif-light"
         android:hint="Datum"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.243"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,24 +107,35 @@
         android:id="@+id/pickDateBtn"
         android:layout_width="262dp"
         android:layout_height="46dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="192dp"
         android:text="@string/hint_date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintHorizontal_bias="0.241"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="155dp"
-        android:layout_height="72dp"
+        android:layout_width="272dp"
+        android:layout_height="64dp"
 
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="108dp"
         android:text="@string/button_save"
         android:textColor="@color/buttonLabel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/neuereintragüberschrift"
+        android:layout_width="171dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

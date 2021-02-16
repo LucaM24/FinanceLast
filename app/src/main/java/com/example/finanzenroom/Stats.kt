@@ -25,6 +25,8 @@ class Stats : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var spinner_kat : Spinner
     private lateinit var button_berechne2: Button
 
+    private lateinit var statsScreenÜberschrift: TextView
+
 
     val monate = arrayOf("Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember")
     //
@@ -34,6 +36,9 @@ class Stats : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats)
+
+        statsScreenÜberschrift = findViewById(R.id.statsscreenüberschrift)
+        statsScreenÜberschrift.text = "Analyse"
 
         spinner_monate = findViewById(R.id.spinner_monate)
         spinner_monate.onItemSelectedListener = this
