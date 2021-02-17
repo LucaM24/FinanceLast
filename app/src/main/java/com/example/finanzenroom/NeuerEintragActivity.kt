@@ -26,6 +26,8 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_neuer_eintrag)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) //Dadurch wird in der Actionbar ein Pfeil angezeigt, mit dem man zum Hauptbildschirm, (oder auf ein beliebiges), wechseln kann
+
         editWordView = findViewById(R.id.edit_word)
         tV4 = findViewById(R.id.textView4)
         bEinnahme = findViewById(R.id.button_einnahme)

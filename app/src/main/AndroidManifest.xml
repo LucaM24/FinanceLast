@@ -12,8 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="Instantiatable">
-        <activity android:name=".changeEntry"></activity>
-        <activity android:name=".Stats" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -23,8 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NeuerEintragActivity" />
-        <activity android:name=".Settings" />
-    </application>
+
+        //Alle Klassen, zu denen man wechseln kann
+        <activity android:name=".NeuerEintragActivity"
+            android:parentActivityName=".MainActivity"/> //ParentActivity für den Back Button in der Leiste oben
+        <activity android:name=".changeEntry"
+            android:parentActivityName=".MainActivity"/> //ParentActivity für den Back Button in der Leiste oben>
+        <activity android:name=".Stats"
+            android:parentActivityName=".MainActivity"/> //ParentActivity für den Back Button in der Leiste oben
+        <activity android:name=".Settings"
+            android:parentActivityName=".MainActivity"/> //ParentActivity für den Back Button in der Leiste oben
+
+</application>
 
 </manifest>

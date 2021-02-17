@@ -36,6 +36,8 @@ class Stats : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) //Dadurch wird in der Actionbar ein Pfeil angezeigt, mit dem man zum Hauptbildschirm, (oder auf ein beliebiges), wechseln kann
+
 
         statsScreenÜberschrift = findViewById(R.id.statsscreenüberschrift)
         statsScreenÜberschrift.text = "Analyse"
