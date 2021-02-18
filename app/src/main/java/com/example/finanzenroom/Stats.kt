@@ -93,6 +93,7 @@ class Stats : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             }
         }
 
+
         tV7 = findViewById(R.id.textView7)
         spinner_kat = findViewById(R.id.spinner_kat)
         button_berechne2 = findViewById(R.id.buttonBerechne2)

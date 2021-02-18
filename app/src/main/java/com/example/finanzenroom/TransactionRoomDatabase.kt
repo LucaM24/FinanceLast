@@ -32,7 +32,7 @@ public abstract class TransactionRoomDatabase : RoomDatabase() {
             transactionDao.deleteAll()
 
             // Add sample words.
-            var transaction = Transaction(0, "Ausgabe", "Essen", 2021, 1, 24, 420)
+            var transaction = Transaction(0, "Ausgabe", "Essen", 2021, 1, 24, 4)
             transactionDao.insert(transaction)
             var transaction2 = Transaction(0, "Ausgabe", "Essen", 2021, 2, 14, 69)
             transactionDao.insert(transaction2)

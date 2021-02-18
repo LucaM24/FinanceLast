@@ -72,6 +72,7 @@ class NeuerEintragActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         var month = c.get(Calendar.MONTH) + 1
         var day = c.get(Calendar.DAY_OF_MONTH)
         tV4.setText((day.toString()+ "." + month.toString() + "." + year.toString()))
+
         fun date() { //3. Methode, falls der Nutzer einen anderen Tag auswählen möchte
             val datePickerDialog =
                     DatePickerDialog(this@NeuerEintragActivity, DatePickerDialog.OnDateSetListener
