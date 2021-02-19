@@ -28,9 +28,6 @@ class TransactionListAdapter : ListAdapter<Transaction, TransactionListAdapter.T
     class TransactionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val transactionItemView: TextView = itemView.findViewById(R.id.textView)
-
-
-
         fun bind(text: String) {
             transactionItemView.text = text
 

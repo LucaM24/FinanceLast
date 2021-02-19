@@ -7,6 +7,11 @@
         <!--<item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>-->
+
+        <item name="colorPrimary">#009EFD</item>
+        <item name="colorAccent">#009EFD</item>
+
+
     </style>
 
     <!-- The default font for RecyclerView items is too small.

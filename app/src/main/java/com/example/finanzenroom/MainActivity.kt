@@ -3,14 +3,17 @@ package com.example.finanzenroom
 import android.app.Activity
 import android.content.ClipData
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,17 +26,16 @@ class MainActivity : AppCompatActivity() {
         WordViewModelFactory((application as TransactionApplication).repository)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean { //3 Punkte in der Leiste für Einstellungen
         menuInflater.inflate(R.menu.nav_menu,menu)
         return true
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
+    override fun onOptionsItemSelected(item: MenuItem): Boolean { //und der ActionListener dazu
         val intent = Intent(this@MainActivity, Settings::class.java)
         startActivity(intent)
         return true
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -48,12 +50,14 @@ class MainActivity : AppCompatActivity() {
             transaction?.let { adapter.submitList(it) }
         })
 
+        /*Optional Datum anzeigen-> Wenn ja Textview muss noch auf XML
         var datumTextView = findViewById<TextView>(R.id.datumtextview)
         var c = Calendar.getInstance()
         var year = c.get(Calendar.YEAR)
         var month = c.get(Calendar.MONTH) + 1
         var day = c.get(Calendar.DAY_OF_MONTH)
         datumTextView.text = ""+day+""+"."+month+"."+year
+         */
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
